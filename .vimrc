@@ -1,0 +1,76 @@
+set nocompatible
+filetype off
+
+set rtp+=~/.vim/bundle/vundle
+call vundle#rc()
+
+" let Vundle manage Vundle
+" required! 
+Bundle 'gmarik/vundle'
+
+" original repos on github
+Bundle 'tpope/vim-fugitive'
+Bundle 'Lokaltog/vim-easymotion'
+
+" vim-scripts repos
+Bundle 'L9'
+Bundle 'FuzzyFinder'
+Bundle 'bufkill.vim'
+Bundle 'Tabular'
+Bundle 'argtextobj.vim'
+
+" non github repos
+Bundle 'git://git.wincent.com/command-t.git'
+let g:CommandTMaxFiles=30000
+let g:CommandTMatchWindowAtTop=1
+let g:CommandTCancelMap='<Esc>'
+let g:CommandTMaxHeight=25
+
+Bundle 'FSwitch'
+augroup ccfiles
+  au!
+  au BufEnter *.cpp let b:fswitchdst = 'h,inl'
+  au BufEnter *.cpp let b:fswitchlocs = '.'
+  au BufEnter *.cc let b:fswitchdst = 'h,inl'
+  au BufEnter *.cc let b:fswitchlocs = '.'
+  au BufEnter *.mm let b:fswitchdst = 'h,inl'
+  au BufEnter *.mm let b:fswitchlocs = '.'
+augroup END
+augroup hfiles
+  au!
+  au BufEnter *.h let b:fswitchdst = 'cc,cpp,mm'
+  au BufEnter *.h let b:fswitchlocs = '.'
+augroup END
+let fsnonewfiles=1
+
+Bundle 'Color-Sampler-Pack'
+colorscheme lucius
+
+filetype plugin indent on
+
+set ignorecase
+set smartcase
+set expandtab
+set shiftwidth=2
+set softtabstop=2
+set incsearch
+set hlsearch
+set wildmode=list:longest
+" set list listchars=trail:.
+set cursorline
+set number
+set nobackup
+set nowb
+set noswapfile
+
+autocmd WinEnter,BufWinEnter * match ErrorMsg '\%>80v.\+'
+
+set laststatus=2
+set statusline=%<\ %n:%t\ %m%r%y%=%-28.(Line:\ %l/%L,\ Col:\ %c%V\ (%P)%)
+
+nmap <C-left> :bp<CR>
+nmap <C-right> :bn<CR>
+nmap <Leader>n :noh<CR>
+nmap <Leader>o :FSHere<CR>
+nmap <Leader>h :FSLeft<CR>
+nmap <Leader>l :FSRight<CR>
