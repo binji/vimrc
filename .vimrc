@@ -11,6 +11,7 @@ Bundle 'gmarik/vundle'
 " original repos on github
 Bundle 'tpope/vim-fugitive'
 Bundle 'Lokaltog/vim-easymotion'
+Bundle 'natduca/quickopen'
 
 " vim-scripts repos
 Bundle 'L9'
