@@ -69,6 +69,8 @@ autocmd WinEnter,BufWinEnter * match ErrorMsg '\%>80v.\+'
 
 set laststatus=2
 set statusline=%<\ %n:%t\ %m%r%y%=%-28.(Line:\ %l/%L,\ Col:\ %c%V\ (%P)%)
+hi StatusLine ctermfg=Green
+hi StatusLineNC ctermfg=Red
 
 nmap <C-left> :bp<CR>
 nmap <C-right> :bn<CR>
