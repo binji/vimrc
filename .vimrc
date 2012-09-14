@@ -57,7 +57,8 @@ set softtabstop=2
 set incsearch
 set hlsearch
 set wildmode=list:longest
-" set list listchars=trail:.
+set list
+set listchars=tab:>-,trail:-
 set cursorline
 set number
 set nobackup
@@ -75,3 +76,4 @@ nmap <Leader>n :noh<CR>
 nmap <Leader>o :FSHere<CR>
 nmap <Leader>h :FSLeft<CR>
 nmap <Leader>l :FSRight<CR>
+nnoremap <Leader>w :%s/\s\+$//<cr>:let @/=''<cr>
