@@ -20,7 +20,8 @@ VUNDLE_DIR = join(HOME, '.vim', 'bundle', 'vundle')
 
 if not exists(VUNDLE_DIR):
   os.makedirs(VUNDLE_DIR)
-  subprocess.call(['git', 'clone', VUNDLE_GITHUB_URL, VUNDLE_DIR], shell=use_shell)
+  subprocess.call(['git', 'clone', VUNDLE_GITHUB_URL, VUNDLE_DIR],
+                   shell=use_shell)
 else:
   subprocess.call(['git', 'pull'], cwd=VUNDLE_DIR, shell=use_shell)
 shutil.copy('.vimrc', join(HOME, '.vimrc'))

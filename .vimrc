@@ -47,9 +47,8 @@ augroup hfiles
 augroup END
 let fsnonewfiles=1
 
-Bundle 'Colour-Sampler-Pack'
+Bundle 'binji/lucius'
 colorscheme lucius
-LuciusDark
 
 filetype plugin indent on
 
@@ -75,8 +74,8 @@ autocmd BufEnter * silent! lcd %:p:h
 
 set laststatus=2
 set statusline=%<\ %n:%t\ %m%r%y%=%-28.(Line:\ %l/%L,\ Col:\ %c%V\ (%P)%)
-hi StatusLine ctermfg=16  "Black
-hi StatusLineNC ctermfg=DarkGrey
+hi StatusLine ctermfg=Green
+hi StatusLineNC ctermfg=Red
 
 nmap <C-left> :bp<CR>
 nmap <C-right> :bn<CR>
