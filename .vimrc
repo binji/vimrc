@@ -16,7 +16,6 @@ Bundle 'tpope/vim-surround'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'natduca/quickopen'
 Bundle 'scrooloose/syntastic'
-Bundle 'Valloric/YouCompleteMe'
 
 " vim-scripts repos
 Bundle 'bufkill.vim'
