@@ -85,3 +85,5 @@ nmap <Leader>l :FSRight<CR>
 nnoremap <Leader>w :%s/\s\+$//<cr>:let @/=''<cr>
 noremap <C-K> :pyf /usr/lib/clang-format/clang-format.py<CR>
 inoremap <C-K> <C-O>:pyf /usr/lib/clang-format/clang-format.py<CR>
+
+syntax enable
