@@ -41,7 +41,7 @@ augroup ccfiles
 augroup END
 augroup hfiles
   au!
-  au BufEnter *.h let b:fswitchdst = 'cc,cpp,mm'
+  au BufEnter *.h let b:fswitchdst = 'c,cc,cpp,mm'
   au BufEnter *.h let b:fswitchlocs = '.'
 augroup END
 let fsnonewfiles=1
