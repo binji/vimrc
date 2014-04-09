@@ -46,6 +46,7 @@ augroup hfiles
 augroup END
 let fsnonewfiles=1
 
+
 Bundle 'binji/lucius'
 colorscheme lucius
 
@@ -66,6 +67,14 @@ set number
 set nobackup
 set nowb
 set noswapfile
+
+" python tabstop was broken in a recent upgrade... (Vim 7.4?)
+augroup pyfiles
+  au!
+  au BufEnter *.py set shiftwidth=2
+  au BufEnter *.py set softtabstop=2
+augroup END
+
 
 autocmd WinEnter,BufWinEnter * match ErrorMsg '\%>80v.\+'
 " Change the current directory for the buffer to its file's directory.
