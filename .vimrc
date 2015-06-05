@@ -77,8 +77,6 @@ augroup END
 
 
 autocmd WinEnter,BufWinEnter * match ErrorMsg '\%>80v.\+'
-" Change the current directory for the buffer to its file's directory.
-autocmd BufEnter * silent! lcd %:p:h
 
 set laststatus=2
 set statusline=%<\ %n:%t\ %m%r%y%=%-28.(Line:\ %l/%L,\ Col:\ %c%V\ (%P)%)
