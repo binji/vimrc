@@ -4,24 +4,19 @@ import shutil
 import subprocess
 import sys
 
-exists = os.path.exists
-join = os.path.join
-getenv = os.environ.get
-
 if sys.platform == 'win32':
-  HOME = join(getenv('HOMEDRIVE'), getenv('HOMEPATH'))
+  HOME = os.path.join(os.environ['HOMEDRIVE'], os.environ['HOMEPATH'])
   use_shell = True
 else:
-  HOME = getenv('HOME')
+  HOME = os.environ['HOME']
   use_shell = False
 
-VUNDLE_GITHUB_URL = 'https://github.com/gmarik/vundle.git'
-VUNDLE_DIR = join(HOME, '.vim', 'bundle', 'vundle')
+plug_vim = os.path.join(HOME, '.vim', 'autoload', 'plug.vim')
+PLUG_VIM_URL = \
+    'https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
-if not exists(VUNDLE_DIR):
-  os.makedirs(VUNDLE_DIR)
-  subprocess.call(['git', 'clone', VUNDLE_GITHUB_URL, VUNDLE_DIR],
+if not os.path.exists(plug_vim):
+  subprocess.call(['curl', '-fLo', plug_vim, '--create-dirs', PLUG_VIM_URL],
                    shell=use_shell)
-else:
-  subprocess.call(['git', 'pull'], cwd=VUNDLE_DIR, shell=use_shell)
-shutil.copy('.vimrc', join(HOME, '.vimrc'))
+
+shutil.copy('.vimrc', os.path.join(HOME, '.vimrc'))
