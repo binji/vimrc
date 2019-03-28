@@ -15,6 +15,7 @@ Plug 'vim-scripts/FSwitch'
 
 call plug#end()
 
+set t_Co=256
 colorscheme lucius
 
 filetype plugin indent on
@@ -137,5 +138,6 @@ nmap <Leader>o :FSHere<CR>
 nnoremap <Leader>w :%s/\s\+$//<cr>:let @/=''<cr>
 noremap <C-K> :pyf ~/clang-format.py<CR>
 inoremap <C-K> <C-O>:pyf ~/clang-format.py<CR>
+nnoremap <Leader>c :silent make\|redraw!\|cw<CR>
 
 syntax enable
